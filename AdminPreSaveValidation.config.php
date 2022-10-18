@@ -13,10 +13,10 @@ class AdminPreSaveValidationConfig extends ModuleConfig {
 				'type' => 'InputfieldRadios',
 				'label' => 'Enable pre-save validation on...',
 				'options' => [
+					'exclude' => 'All templates except those I specify below',
 					'include' => 'Specified templates only',
-					'exclude' => 'All templates except those I specify',
 				],
-				'value' => 'include',
+				'value' => 'exclude',
 			],
 			[
 				'name' => 'selectedTemplates',
