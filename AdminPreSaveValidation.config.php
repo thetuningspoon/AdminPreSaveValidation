@@ -22,7 +22,8 @@ class AdminPreSaveValidationConfig extends ModuleConfig {
 				'name' => 'selectedTemplates',
 				'type' => 'InputfieldAsmSelect',
 				'label' => 'Templates',
-				'options' => $selectableTemplates
+				'options' => $selectableTemplates,
+				'value' => [],
 			]
 		]);
 	}
