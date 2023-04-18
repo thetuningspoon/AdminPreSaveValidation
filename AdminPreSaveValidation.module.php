@@ -5,7 +5,7 @@ class AdminPreSaveValidation extends WireData implements Module {
 
 		return array(
 			'title' => 'Pre-Save Validation',
-			'version' => '1.1.0',
+			'version' => '1.1.1',
 			'summary' => "Forces admin editors to fix all errors before saving a page.",
 			'author' => 'Mike Spooner (thetuningspoon)',
 			'href' => 'http://www.solutioninnovators.com',

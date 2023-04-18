@@ -23,7 +23,7 @@ $(document).ready(function() {
                dataType: 'json',
                data: $(this).serialize() + '&preValidate=1'
            }).done(function(data) {
-               $visibleSaveButtons.removeAttr('disabled'); // Re-enable save buttons
+               $visibleSaveButtons.prop('disabled', false); // Re-enable save buttons
 
                // If no errors, submit page normally
                if(!Object.keys(data).length) {
@@ -48,7 +48,7 @@ $(document).ready(function() {
                    var firstError = $('.InputfieldStateError').eq(0);
                    var tabId = firstError.closest('.WireTab').attr('id');
                    var tab = $('#_' + tabId);
-                   tab.click();
+                   tab.trigger('click');
 
                    // Scroll to the first error
                    var topOfFirstError = firstError.offset().top;
