@@ -23,7 +23,6 @@ $(document).ready(function() {
                dataType: 'json',
                data: $(this).serialize() + '&preValidate=1'
            }).done(function(data) {
-               // console.log(data);
                $visibleSaveButtons.removeAttr('disabled'); // Re-enable save buttons
 
                // If no errors, submit page normally
@@ -43,11 +42,17 @@ $(document).ready(function() {
                        $inputfield.addClass('InputfieldStateError');
                        $inputfield.addClass('uk-alert-danger');
                        $inputfield.children('.InputfieldContent').prepend($errorElement);
-
-                       // Scroll to the first error
-                       var topOfFirstError = $('.InputfieldStateError').eq(0).offset().top;
-                       $('html,body').animate({ scrollTop: topOfFirstError }, 250);
                    }
+
+                   // Switch to the tab that contains the first error
+                   var firstError = $('.InputfieldStateError').eq(0);
+                   var tabId = firstError.closest('.WireTab').attr('id');
+                   var tab = $('#_' + tabId);
+                   tab.click();
+
+                   // Scroll to the first error
+                   var topOfFirstError = firstError.offset().top;
+                   $('html,body').animate({ scrollTop: topOfFirstError }, 250);
                }
            }).fail(function(data) {
                $visibleSaveButtons.removeAttr('disabled'); // Re-enable save buttons
