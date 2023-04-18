@@ -55,7 +55,7 @@ $(document).ready(function() {
                    $('html,body').animate({ scrollTop: topOfFirstError }, 250);
                }
            }).fail(function(data) {
-               $visibleSaveButtons.removeAttr('disabled'); // Re-enable save buttons
+               $visibleSaveButtons.prop('disabled', false); // Re-enable save buttons
                $visibleSaveButtons.find('i').remove(); // Remove spinner
            });
        }
